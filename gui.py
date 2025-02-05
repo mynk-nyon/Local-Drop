@@ -5,14 +5,12 @@ class FileShareGUI:
     def __init__(self, root):
         self.root = root
         self.root.title("Secure File Share")
-        
-        # Device List
+
         self.device_frame = ttk.LabelFrame(root, text="Available Devices")
         self.device_list = tk.Listbox(self.device_frame, height=10)
         self.device_list.pack(padx=10, pady=10)
         self.device_frame.pack(padx=10, pady=5, fill=tk.BOTH)
-        
-        # File Selection
+
         self.file_frame = ttk.Frame(root)
         self.file_btn = ttk.Button(self.file_frame, text="Select File", command=self.select_file)
         self.file_label = ttk.Label(self.file_frame, text="No file selected")
@@ -20,15 +18,12 @@ class FileShareGUI:
         self.file_label.pack(side=tk.LEFT)
         self.file_frame.pack(pady=5)
         
-        # Progress Bar
         self.progress = ttk.Progressbar(root, orient=tk.HORIZONTAL, mode='determinate')
         self.progress.pack(fill=tk.X, padx=10, pady=5)
         
-        # Logs
         self.logs = tk.Text(root, height=10, state=tk.DISABLED)
         self.logs.pack(fill=tk.BOTH, padx=10, pady=5, expand=True)
         
-        # Start Network Components
         self.start_network()
     
     def select_file(self):
@@ -47,7 +42,6 @@ class FileShareGUI:
         self.logs.config(state=tk.DISABLED)
     
     def start_network(self):
-        # Will be implemented in network.py
         pass
 
 if __name__ == "__main__":
