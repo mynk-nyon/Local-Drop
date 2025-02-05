@@ -1,0 +1,1 @@
+openssl req -x509 -newkey rsa:4096 -keyout device.key -out device.crt -days 365 -nodes
